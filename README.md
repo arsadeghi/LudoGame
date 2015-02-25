@@ -1,5 +1,5 @@
 # What is Ludo?
-In this project a modified version of Ludo, named “[Mensch ärgere dich nicht](http://en.wikipedia.org/wiki/Mensch_%C3%A4rgere_dich_nicht)” , is implemented. The game rules are quoted from its Wikipedia page :
+In this project a modified version of Ludo, named “[Mensch ärgere dich nicht](http://en.wikipedia.org/wiki/Mensch_%C3%A4rgere_dich_nicht)” , is implemented. This is originally a German game. In Farsi, we call it just [“Mench”](http://fa.wikipedia.org/wiki/%D9%85%D9%86%DA%86).  The game rules are quoted from its Wikipedia page :
 
 > The game can be played by 2, 3 or 4 players – one player per board side. Each player has 4 game pieces, which are in the "out" area when the game starts, and which must be brought into the player's "home" row.
 The rows are arranged in a cross position. They are surrounded and connected with a circle of fields, over which the game pieces move in clockwise direction. There are 3 fields nearest to each side of the board; the left one is the player's "start" field (highlighted with player’s color) and the middle one leads to the "home" row. This means that each game piece enters the circle at the "start" field, moves (clockwise) over the board and finally enters the "home" row. The first player with all of their pieces in their "home" row wins the game.
@@ -35,12 +35,14 @@ Pieces can jump over other pieces, and throw out pieces from other players (into
 # Run
 The project package name is Ludo. Hence, if the tomcat http port is (default) 8080, the project is accessible by following address:
 
-> http://localhost:8080/Ludo
+> [http://localhost:8080/Ludo]()
 
-Note: The http channel is automatically redirected to https (8443 default port). 
+Note: The http channel is automatically redirected to https (8443 default port).
+
+Full documentation is availabe [here](https://github.com/arsadeghi/LudoGame/blob/master/Documents/ProjectReport.pdf?raw=true). 
 
 # Assurance case
-Please refer to the accompanying documentation that provides the arguments and justifications to show that this project fulfills the security constraints.
+Please refer to the [accompanying documentation](https://github.com/arsadeghi/LudoGame/blob/master/Documents/ProjectReport.pdf?raw=true) that provides the arguments and justifications to show that this project fulfills the security constraints.
 
 
    
