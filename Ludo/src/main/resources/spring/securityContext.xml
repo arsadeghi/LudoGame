@@ -1,0 +1,48 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/security
+                           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+	<!-- SWE_681 1- AuthZ mechanism is defined: anonymous users could just access to login (logout) and add new account pages. 
+		All other pages are restricted to authenticated users. 2- All request in http are automatically redirected to https channel 
+		3- After logging out, the user session is invalidated. 4- User's password is encrypted with SHA256 algorithm with "salt" 
+		property as the salt 6-Spring Security’s Session Fixation Protection assigns a new session id, for each new session (the 
+		reason that the session lost if we switch back to http from https -->
+	<security:http use-expressions='true' auto-config="true">
+		<security:intercept-url pattern="/login.htm" access="permitAll" requires-channel="https" />
+		<security:intercept-url pattern="/logout.htm" access="permitAll" requires-channel="https" />
+		<security:intercept-url pattern="/resources/**/*.*" access="permitAll" requires-channel="https" />
+		<security:intercept-url pattern="/addUser.htm" access="permitAll" requires-channel="https" />
+		<security:intercept-url pattern="/**" access="isAuthenticated()" requires-channel="https" />
+		<security:form-login login-page="/login.htm" authentication-failure-url="/login.htm?login_error=1"
+			default-target-url="/index.htm" always-use-default-target="true" authentication-failure-handler-ref="authenticationFailureHandler"/>
+		<security:logout logout-url="/j_spring_security_logout" delete-cookies="JSESSIONID"
+			invalidate-session="true" />
+	</security:http>
+
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider ref="authenticationProvider" />
+	</security:authentication-manager>
+
+	<bean id="authenticationProvider" class="edu.gmu.ludo.service.impl.LoginServiceProviderImpl">
+		<constructor-arg ref="userDetailsService" />
+		<constructor-arg ref="userDetailsService" />
+		<property name="userDetailsService" ref="userDetailsService" />
+		<property name="passwordEncoder" ref="passwordEncoder" />
+		<property name="saltSource">
+			<bean class="org.springframework.security.authentication.dao.ReflectionSaltSource">
+				<property name="userPropertyToUse" value="salt" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.security.authentication.encoding.ShaPasswordEncoder" id="passwordEncoder">
+		<constructor-arg value="256" />
+		<property name="iterations" value="1000" />
+	</bean>
+
+	<bean class="edu.gmu.ludo.service.impl.LudoServiceImpl" id="userDetailsService" />
+	<bean class="edu.gmu.ludo.service.impl.AuthenticationFailureHandlerImpl" id="authenticationFailureHandler" />
+
+</beans>

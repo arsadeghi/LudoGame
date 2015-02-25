@@ -1,0 +1,184 @@
+@import url("general.css");
+
+#divider {
+	background: #FFFFFF;
+	height: 550px;
+}
+
+label {
+	font-weight: normal;
+	font-size: 15px;
+	display: block;
+}
+
+input {
+	display: block;
+	margin: 3px 0px 20px 0px;
+	padding: 5px;
+	width: 200px;
+	height: 15px;
+	border: 2px solid #dadada;
+	border-radius: 7px;
+	font-size: 15px;
+	border: 2px solid #dadada;
+}
+
+button {
+	background-color: #ccc;
+	color: #000;
+	border: 1px #f4f4f4 solid;
+	margin: 12px 0px;
+	box-shadow: 0 3px 2px #AAA;
+	margin-right: 5px;
+	padding: 5px 10px;
+	font-weight: bold;
+}
+
+.link {
+	width: 500px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	padding: 30px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	background-color: #f4f4f4;
+}
+
+.link h2 {
+	margin-top: 0px;
+	margin-bottom: 20px;
+	font-size: large;
+	font-weight: bolder;
+}
+
+table.data {
+	width: 700px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	margin-bottom: 40px;
+	border-collapse: collapse;
+}
+
+tr.data {
+	margin: 0px;
+	height: 25px;
+}
+
+td.data {
+	text-align: center;
+	vertical-align: middle;
+	background-size: 31px 45px;
+	background-repeat: no-repeat;
+}
+
+td.avatar {
+	text-align: left;
+	vertical-align: middle;
+	background-size: 31px 45px;
+	background-repeat: no-repeat;
+	height: 45px;
+	padding-left: 40px;
+	background-position: left center;
+}
+
+td.Red {
+	background-color: #FFE8E8;
+	color: #C90634;
+}
+
+td.Yellow {
+	background-color: #FCFBCF;
+	color: #FCDA00;
+}
+
+td.Blue {
+	background-color: #E8FAFC;
+	color: #12BEFC;
+}
+
+td.Green {
+	background-color: #D9FFE0;
+	color: #22C928;
+}
+
+th.data {
+	text-align: left;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.error_field {
+	color: #C90634;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.error {
+	background: #FFE8E8;
+	color: #C90634;
+	border-radius: 2px;
+	border: 1px solid #C90634;
+	margin: 0 auto;
+	padding: 5px;
+	font-size: 12px;
+	font-weight: bold;
+	width: 50%;
+	margin-top: 10px;
+}
+
+.success {
+	background: #D8F6CE;
+	color: #088A29;
+	border-radius: 2px;
+	border: 1px solid #088A29;
+	margin: 0 auto;
+	padding: 5px;
+	font-size: 12px;
+	font-weight: bold;
+	width: 50%;
+	margin-top: 10px;
+}
+
+td.report {
+	text-align: left;
+	vertical-align: middle;
+	background-size: 20px 30px;
+	background-repeat: no-repeat;
+	height: 35px;
+	padding-left: 25px;
+	background-position: left center;
+}
+
+td.report_small {
+	text-align: left;
+	vertical-align: middle;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	height: 25px;
+	padding-left: 25px;
+	background-position: left center;
+}
+
+td.roll {
+	background-image: url("../imgs/dice/na.png");
+}
+
+td.move {
+	background-image: url("../imgs/move.png");
+}
+
+td.gold {
+	background-image: url("../imgs/gold.png");
+}
+
+td.finished {
+	background-image: url("../imgs/finished.png");
+}
+
+td.joined {
+	background-image: url("../imgs/in.png");
+}
+
+td.left {
+	background-image: url("../imgs/out.png");
+}
